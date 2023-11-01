@@ -19,6 +19,8 @@ function convertValues() {  // Função da conversão de valores
     const libraToday = 6.05    // Valor da libra do dia
     const realtoday = 1.00     // Valor do real
 
+    
+
 
     if (currencySelect.value == "dolar" && moneySelect.value == "brl") {  // Condição se
 
@@ -27,7 +29,7 @@ function convertValues() {  // Função da conversão de valores
             currency: "USD"
         }).format(inputCurrencyValue / dollarToday)
 
-        
+
     }
     if (currencySelect.value == "dolar" && moneySelect.value == "eur") {
 
@@ -36,7 +38,7 @@ function convertValues() {  // Função da conversão de valores
             currency: "USD"
         }).format(inputCurrencyValue * euroToday / dollarToday)
 
-       
+
     }
     if (currencySelect.value == "dolar" && moneySelect.value == "gbp") {
 
@@ -134,15 +136,42 @@ function convertValues() {  // Função da conversão de valores
         }).format(inputCurrencyValue)
 
     }
-       
+     if (moneySelect.value == "eur") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR"
+        }).format(inputCurrencyValue)
     
 
+     }
+     if (moneySelect.value == "uss") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+        }).format(inputCurrencyValue)
+    
 
-    currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-br", {
-        style: "currency",
-        currency: "BRL"
-    }).format(inputCurrencyValue)
+     }
+     if (moneySelect.value == "gbp") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GBP"
+        }).format(inputCurrencyValue)
+    
 
+     }
+     if (moneySelect.value == "brl") {
+        currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-br", {
+            style: "currency",
+            currency: "BRL"
+        }).format(inputCurrencyValue)
+    
+
+     }
+
+
+
+    
 
     console.log(convertValue)
 
@@ -159,58 +188,58 @@ function changeCurrency() {
     if (currencySelect.value == "dolar") {
         currencyName.innerHTML = "Dolar americano"
         currencyImage.src = "assets/dolar.png"
-        
+
 
     }
     if (currencySelect.value == "euro") {
         currencyName.innerHTML = "Euro"
         currencyImage.src = "assets/euro.png"
-        
+
     }
     if (currencySelect.value == "libra") {
         currencyName.innerHTML = "Libra"
         currencyImage.src = "assets/libra 1.png"
-        
+
     }
     if (currencySelect.value == "real") {
         currencyName.innerHTML = "Real Brasileiro"
         currencyImage.src = "assets/real.png"
-        
+
     }
 
 }
 
-    function changeMoney() {
+function changeMoney() {
 
-        const moneyName = document.querySelector(".money-name")
-        const moneyImage = document.querySelector(".money-img")
+    const moneyName = document.querySelector(".money-name")
+    const moneyImage = document.querySelector(".money-img")
 
-        if (moneySelect.value == "uss") {
-            moneyName.innerHTML = "Dolar americano"
-            moneyImage.src = "assets/dolar.png"
-            
+    if (moneySelect.value == "uss") {
+        moneyName.innerHTML = "Dolar americano"
+        moneyImage.src = "assets/dolar.png"
 
-        }
-        if (moneySelect.value == "brl") {
-            moneyName.innerHTML = "Real Brasileiro"
-            moneyImage.src = "assets/real.png"
 
-        }
-        if (moneySelect.value == "eur") {
-            moneyName.innerHTML = "Euro"
-            moneyImage.src = "assets/euro.png"
+    }
+    if (moneySelect.value == "brl") {
+        moneyName.innerHTML = "Real Brasileiro"
+        moneyImage.src = "assets/real.png"
 
-        }
-        if (moneySelect.value == "gbp") {
-            moneyName.innerHTML = "Libra"
-            moneyImage.src = "assets/libra 1.png"
-        }
+    }
+    if (moneySelect.value == "eur") {
+        moneyName.innerHTML = "Euro"
+        moneyImage.src = "assets/euro.png"
 
-        convertValues()
+    }
+    if (moneySelect.value == "gbp") {
+        moneyName.innerHTML = "Libra"
+        moneyImage.src = "assets/libra 1.png"
     }
 
+    convertValues()
+}
 
-    
+
+
 
 
 moneySelect.addEventListener("change", changeMoney)
