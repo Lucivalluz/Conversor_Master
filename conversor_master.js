@@ -27,7 +27,7 @@ function convertValues() {  // Função da conversão de valores
             currency: "USD"
         }).format(inputCurrencyValue / dollarToday)
 
-
+        
     }
     if (currencySelect.value == "dolar" && moneySelect.value == "eur") {
 
@@ -36,7 +36,7 @@ function convertValues() {  // Função da conversão de valores
             currency: "USD"
         }).format(inputCurrencyValue * euroToday / dollarToday)
 
-
+       
     }
     if (currencySelect.value == "dolar" && moneySelect.value == "gbp") {
 
@@ -134,6 +134,9 @@ function convertValues() {  // Função da conversão de valores
         }).format(inputCurrencyValue)
 
     }
+       
+    
+
 
     currencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-br", {
         style: "currency",
