@@ -73,24 +73,25 @@ section {
     width: 327px;
     height: 276px;
     margin-top: 10px;
-  padding-bottom: 0;
+    padding-bottom: 0;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.arrow{
+.arrow {
     margin: -14px 0 1px 0;
 }
-.currency-box{
+
+.currency-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0;
 }
 
-.currency{
+.currency {
 
     color: #777;
     font-size: 14px;
@@ -98,12 +99,68 @@ section {
     margin-top: 0;
 
 }
-.currency-value, .currency-value-to-convert{
+
+.currency-value,
+.currency-value-to-convert {
     color: #555;
     font-size: 20px;
     font-weight: 700;
     margin-top: -20px;
 }
-img{
+
+img {
     margin-top: 4px;
+}
+
+@media screen and (max-width: 400px) {
+    main {
+        width: 330px;
+        height: 710px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    label {
+        color: #777;
+        font-size: 14px;
+        font-weight: 400;
+
+    }
+
+    button,
+    select,
+    input {
+        width: 90%;
+        padding-left: 18px;
+        margin-left: 17px;
+
+
+    }
+
+    label {
+        margin-left: 17px;
+    }
+
+    section {
+        width: 300px;
+        margin-left: 15px;
+        height: 280px;
+        margin-bottom: 60px;
+    }
+
+    p {
+        margin-left: 18px;
+        margin-top: 15px;
+
+    }
+
+    .currency-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        width: 40%;
+        margin-bottom: 10px;
+    }
+
 }
